@@ -37,7 +37,7 @@ def remove_nulls(s):
     else:
         return s.replace('\x00','\\x00')
 
-'''
+"""
 def get_id_urls(url):
     
     Given a url, returns the corresponding id in the urls table.
@@ -63,7 +63,7 @@ def get_id_urls(url):
     id_urls = res[0]
     return id_urls
 '''
-
+"""
 def batch(iterable, n=1):
     '''
     Group an iterable into batches of size n.
@@ -324,7 +324,7 @@ def _insert_tweets(connection,input_tweets):
             id_urls = url['expanded_url']
             tweet_urls.append({
                 'id_tweets':tweet['id'],
-                'url':remove_nulls(id_urls),
+                'url':id_urls,
                 })
 
         ########################################
@@ -383,7 +383,7 @@ def _insert_tweets(connection,input_tweets):
             id_urls = medium['media_url']
             tweet_media.append({
                 'id_tweets':tweet['id'],
-                'id_urls':id_urls,
+                'url':id_urls,
                 'type':medium['type']
                 })
 
