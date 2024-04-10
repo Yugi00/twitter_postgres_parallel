@@ -230,7 +230,7 @@ def insert_tweet(connection,tweet):
             # insert into tweet_mentions
             sql=sqlalchemy.sql.text('''INSERT INTO tweet_mentions (id_tweets, id_users)
             VALUES (:id_tweets, :id_users)
-            on conflict do nothin
+            on conflict do nothing
                 ''')
             res = connection.execute(sql, {'id_tweets': tweet['id'], 'id_users': mention['id']})
 
